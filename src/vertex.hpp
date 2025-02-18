@@ -9,15 +9,15 @@ struct Vertex
     int vertex_index;
     bool fixed;
 
+    std::vector<std::pair<int, float>> connected_to = {};
+
     Vertex() = default;
     Vertex(sf::Vector2f position_, float radius_, int vertex_index_, bool fixed_)
         : last_position{position_},
           position{position_},
           radius{radius_},
           vertex_index{vertex_index_},
-          fixed{fixed_}
-    {
-    }
+          fixed{fixed_} {}
 
     void update(float dt)
     {
