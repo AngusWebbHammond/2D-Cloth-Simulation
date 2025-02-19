@@ -16,6 +16,7 @@ struct RectangleCloth
   void createCloth(Solver &solver)
   {
     bool fixed = false;
+
     for (int i = 0; i < num_verticies.x; i++)
     {
       for (int j = 0; j < num_verticies.y; j++)
@@ -26,6 +27,22 @@ struct RectangleCloth
         }
         solver.addVertex(start_postion + sf::Vector2f{line_length * i, line_length * j}, 10.0f, i * num_verticies.y + j, fixed, {0.0f, 0.0f});
         fixed = false;
+      }
+    }
+
+    for (int j = 0; j < num_verticies.y - 1; j++)
+    {
+      for (int i = 0; i < num_verticies.x; i++)
+      {
+        solver.addLine(i * num_verticies.y + j, i * num_verticies.y + j + 1, true, line_length);
+      }
+    }
+
+    for (int j = 0; j < num_verticies.y; j++)
+    {
+      for (int i = 0; i < num_verticies.x - 1; i++)
+      {
+        solver.addLine(i * num_verticies.y + j, i * num_verticies.y + num_verticies.y + j, true, line_length);
       }
     }
   }

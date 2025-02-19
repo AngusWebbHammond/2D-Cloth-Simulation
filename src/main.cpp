@@ -68,7 +68,7 @@ int main()
     // solver.addLine(15, 16, true, 110.0f);
     // solver.addLine(16, 17, true, 110.0f);
 
-    RectangleCloth cloth({3, 3}, 100.0f, {100.0f, 100.0f});
+    RectangleCloth cloth({5, 8}, 100.0f, {100.0f, 100.0f});
 
     cloth.createCloth(solver);
 
