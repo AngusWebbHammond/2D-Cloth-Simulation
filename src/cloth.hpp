@@ -1,5 +1,4 @@
 #include <SFML/Graphics.hpp>
-// #include "solver.hpp"
 
 struct RectangleCloth
 {
@@ -21,7 +20,7 @@ struct RectangleCloth
     {
       for (int j = 0; j < num_verticies.y; j++)
       {
-        if ((i == 0 && j == 0) || (j == 0 && i == num_verticies.x - 1))
+        if ((i == 0 && j == 0) || (j == 0 && i == num_verticies.x - 1) || (j == 0 && i == num_verticies.x / 2))
         {
           fixed = true;
         }
